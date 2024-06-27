@@ -44,7 +44,7 @@ def complete_order():
         order_id = tree.item(selected_item[0])['values'][0]
         conn = sqlite3.connect('business_orders.db')
         cur = conn.cursor()
-        cur.execute("UPDATE orders SET status ='Завершён' WHERE id =?", (order_id,))
+        cur.execute("UPDATE orders SET status = 'Завершён' WHERE id = ?", (order_id,))
         conn.commit()
         conn.close()
         view_orders()
